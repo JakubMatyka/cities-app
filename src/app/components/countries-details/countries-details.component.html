@@ -1,0 +1,44 @@
+<div class="verticalCenter"
+     fxLayout="column"
+     fxLayoutAlign="center center"
+     *ngIf="showSpinner">
+  <mat-spinner></mat-spinner>
+  <div class="mat-spinner-text">
+    Loading details...
+  </div>
+</div>
+
+<div fxLayout="row" *ngIf="countryObj">
+  <mat-card class="country-container mat-elevation-z8">
+    <mat-card-header>
+      <mat-card-title>Name:</mat-card-title>
+      <mat-card-subtitle>{{ countryObj?.name }}</mat-card-subtitle>
+    </mat-card-header>
+
+    <mat-card-content>
+      <p>Alpha2Code: {{ countryObj?.alpha2Code }}</p>
+      <p>Alpha3Code: {{ countryObj?.alpha3Code }}</p>
+      <p>AltSpellings: {{ countryObj?.altSpellings }}</p>
+      <p>Area: {{ countryObj?.area }}</p>
+      <p>CallingCodes: {{ countryObj?.callingCodes }}</p>
+      <p>Capital: {{ countryObj?.capital }}</p>
+      <p>Currencies: {{ countryObj?.currencies }}</p>
+      <p>Demonym: {{ countryObj?.demonym }}</p>
+      <p>Gini: {{ countryObj?.gini }}</p>
+      <p>Latlng: {{ countryObj?.latlng }}</p>
+      <p>Population: {{ countryObj?.population }}</p>
+      <p>Region: {{ countryObj?.region }}</p>
+      <p>Relevance: {{ countryObj?.relevance }}</p>
+      <p>Subregion: {{ countryObj?.subregion }}</p>
+      <p>Timezones: {{ countryObj?.timezones }}</p>
+      <p>TopLevelDomain: {{ countryObj?.topLevelDomain }}</p>
+      <p>Translations: {{ countryObj?.translations | json }}</p>
+    </mat-card-content>
+
+    <mat-card-actions>
+      <button mat-button (click)="goBack()">GO BACK</button>
+    </mat-card-actions>
+  </mat-card>
+
+  <app-currency-converter [data]="countryObj"></app-currency-converter>
+</div>

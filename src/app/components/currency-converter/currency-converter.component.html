@@ -1,0 +1,29 @@
+<div fxLayout="row">
+  <mat-card class="currency-converter mat-elevation-z8">
+    <mat-card-header>
+      <mat-card-title>Convert currency:</mat-card-title>
+      <mat-card-subtitle>Dupa</mat-card-subtitle>
+    </mat-card-header>
+
+    <mat-card-content >
+      <form fxLayout="column">
+        <mat-form-field class="example-full-width">
+          <input matInput placeholder="From" [(ngModel)]="converter.from" name="from" required>
+        </mat-form-field>
+
+        <mat-form-field class="example-full-width">
+          <input matInput placeholder="From amount" [(ngModel)]="converter.fromAmount" name="fromAmount" required>
+        </mat-form-field>
+
+        <mat-form-field class="example-full-width">
+          <input matInput placeholder="To" [(ngModel)]="converter.to" name="to" required>
+        </mat-form-field>
+
+        <mat-form-field class="example-full-width">
+          <input matInput placeholder="Converted" [(ngModel)]="converted" name="converted" disabled>
+        </mat-form-field>
+      </form>
+      <button mat-button (click)="convertCurrency()">Convert</button>
+    </mat-card-content>
+  </mat-card>
+</div>
