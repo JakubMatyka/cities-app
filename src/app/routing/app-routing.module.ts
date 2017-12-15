@@ -7,12 +7,12 @@ const routes: Routes = [
   { path: '', redirectTo: '/list', pathMatch: 'full' },
   { path: 'list', component: CountriesListComponent },
   { path: 'detail/:name', component: CountriesDetailsComponent },
-  { path: '**', redirectTo: '/list' },
+  { path: '**', redirectTo: '/' },
 ];
 
 @NgModule({
   imports: [
-    RouterModule.forRoot(routes)
+    RouterModule.forRoot(routes, {useHash: true})
   ],
   exports: [
     RouterModule
